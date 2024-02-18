@@ -104,6 +104,7 @@ h1 {
 }
 
 @media (max-width : 728px) {
+
     /* source pour les couleurs : https://www.radix-ui.com/colors*/
     header {
         width: 100%;
@@ -116,7 +117,7 @@ h1 {
         justify-content: space-around;
     }
 
-    .contact{
+    .contact {
         display: flex;
         flex-direction: row;
     }
@@ -146,6 +147,7 @@ h1 {
         height: 667px;
         background-color: #FFBA18;
     }
+
     /**** partie entrée de text****/
 
     .zoneMessage {
@@ -159,13 +161,18 @@ h1 {
         /* align-items: center; */
         /* justify-content: center; */
     }
-    .message{
+
+    .message {
         width: 100%;
         height: 100%;
     }
-    .inputText{
+
+    .inputText {
         padding: 5px;
+        border-radius: 60px;
+        width: 70%;
     }
+
     body {
         margin: 0px;
     }
