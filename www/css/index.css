@@ -21,34 +21,13 @@
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%);
-    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    font-size:12px;
-    height:100vh;
-    margin:0px;
-    padding:0px;
-    /* Padding to avoid the "unsafe" areas behind notches in the screen */
-    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-    text-transform:uppercase;
+   margin: 0;
     width:100%;
 }
-
+/*
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+   
 }
 
 /* Landscape layout (with min-width) */
@@ -113,10 +92,25 @@ h1 {
     header {
         width: 100%;
         height: 100px;
+        background-color: #211F26;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+    ul li {
+        list-style: none;
+        text-decoration: none;
     }
     .screen {
-        width: 500px;
-        height: 500px;
-        background-color: blue;
+        width: 100%;
+        height: 667px;
+        background-color: #FFBA18;
     }
 }
