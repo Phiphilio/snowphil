@@ -27,3 +27,20 @@ function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
 }
+
+
+ const btn = document.querySelector(".btn");
+ btn.addEventListener("click", async function (event){
+
+    event.preventDefault();
+
+    const inputText = document.querySelector(".inputText");
+   if(inputText.value === "V1"){
+    const sms = document.createElement("div");
+    sms.classList.add("sms");
+    sms.innerText= "vous avez validez";
+
+    const screen = document.querySelector(".screen");
+    screen.appendChild(sms);
+   }
+ })
