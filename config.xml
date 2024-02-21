@@ -9,3 +9,15 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 </widget>
+
+<!-- paramètre pour la version android-->
+<!--pour être sûr que les marchent, je dois m'assurer que autorisations sont bien présentes. Je dois les mettre entre deux balises <widget></widget> -->
+<widget>
+    <platform name="android">
+    <config-file parent="/*" target="AndroidManifest.xml">
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    </config-file>
+</platform>
+</widget>
+

@@ -105,7 +105,7 @@ h1 {
 
 @media (max-width : 728px) {
 
-    /* source pour les couleurs : https://www.radix-ui.com/colors*/
+    /* source pour les couleurs : https://www.radix-ui.com/colors */
     /**** partie header ****/
     header {
         width: 100%;
@@ -149,6 +149,11 @@ h1 {
         background-color: #46A758;
     }
 
+    .message-container {
+        /** la présence du container permet de créer une délimitation entre chaque message***/
+        overflow: auto; /* Permet à chaque message d'être défilable si nécessaire */
+        margin-bottom: 80px; /* Espacement entre les messages */
+    }
     .sms {
         position: absolute;
         border: 1px solid #1B1B1B;
@@ -156,9 +161,12 @@ h1 {
         align-items: center;
         justify-content: center;
         background: #1B1B1B;
-        width: 70%;
+        width: 60%;
         height: 10%;
-        color:#46A758 ;
+        color: #8D8D86;
+        margin-bottom: 5px;
+        right: 0px;
+        border-radius: 20px;
     }
 
     /**** partie entrée de text****/
