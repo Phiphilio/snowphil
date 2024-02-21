@@ -27,6 +27,10 @@ function onDeviceReady() {
   console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
   document.getElementById('deviceready').classList.add('ready');
 }
+/**
+ * pour me docu sur le plugin de géolocalisation
+ * https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/index.html
+ */
 
 
 const btn = document.querySelector(".btn");
