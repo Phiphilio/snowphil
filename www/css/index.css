@@ -149,6 +149,18 @@ h1 {
         background-color: #46A758;
     }
 
+    .sms {
+        position: absolute;
+        border: 1px solid #1B1B1B;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #1B1B1B;
+        width: 70%;
+        height: 10%;
+        color:#46A758 ;
+    }
+
     /**** partie entrée de text****/
     .zoneMessage {
         position: absolute;
@@ -181,10 +193,15 @@ h1 {
     .btn {
         border: 0;
         border-radius: 60px;
-        display: none;
+        display: block;
     }
 
     body {
         margin: 0px;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
     }
 }
