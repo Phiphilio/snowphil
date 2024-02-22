@@ -53,9 +53,20 @@ function onDeviceReady() {
 
       messageContainer.appendChild(sms)
       screen.appendChild(messageContainer);
+
+      //pour que la réponse apparaisse 
+      /** j'utilise d'ailleurs la fonction setTimeout pour qu'elle se lance avec un léger décalage 
+       * dans cce cas, je n'appelle pas la fonction. Je suis en train de faire comprendre au programme
+       * que la fonction reponse sera éxécuté après l'intervalle de temps donné.
+       * c'est pour ça que reponse n'a pas de parenthèse.
+       * si j'en avais mis, ça reviendrait à utiliser le résultat de la fonction (dans la mesure ou elle en renvoie un)
+       * 
+       * voici la doc si besoin
+       * https://developer.mozilla.org/fr/docs/Web/API/setTimeout
+      */
+      setTimeout(reponse,10000);
     }
-    console.log("message envoyé");
-    reponse();
+   
   });
 
 
@@ -97,8 +108,9 @@ function onDeviceReady() {
     console.log("erreur lors du chargement de la position");
   }
 
-  //appel de la fonction
+  // on vérifie si la fonction navigator.geolocation est présente
   if ( navigator.geolocation){
+    // appel de la fonction
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
     console.log("on a reçu la position"); 
   } else {
