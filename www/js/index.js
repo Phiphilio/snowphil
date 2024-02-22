@@ -28,48 +28,86 @@ function onDeviceReady() {
   document.getElementById('deviceready').classList.add('ready');
 
 
-  navigator.geolocation.getCurrentPosition( onSuccess, onError );
+ 
+}
 
   
-const onSuccess = async function (position) {
 
-  const latitude = position.coords.latitude;
+  const btn = document.querySelector(".btn");
+  btn.addEventListener("click", async function (event) {
 
-  const longitude = position.coords.longitude;
+    event.preventDefault();
 
-}
-
-
-
-const onError = async function (error){
-  console.log("erreur lors du chargement de la position");
-}
-
-const btn = document.querySelector(".btn");
-btn.addEventListener("click", async function (event) {
-
-  event.preventDefault();
-
-  const inputText = document.querySelector(".inputText");
-  if (inputText.value === "V1") {
+    const inputText = document.querySelector(".inputText");
+    if (inputText.value === "V1") {
 
 
-    const messageContainer = document.createElement("div");
-    messageContainer.classList.add("message-container");
+      const messageContainer = document.createElement("div");
+      messageContainer.classList.add("message-container");
 
-    const sms = document.createElement("div");
-    sms.classList.add("sms");
-    sms.innerText = "vous avez validez";
+      const sms = document.createElement("div");
+      sms.classList.add("sms");
+      sms.innerText = "vous avez validez";
+
+      const screen = document.querySelector(".screen");
+
+      messageContainer.appendChild(sms)
+      screen.appendChild(messageContainer);
+    }
+    console.log("message envoyé");
+    reponse();
+  });
+
+
+  async function reponse() {
+
+    
+
+  const onSuccess = async function (position) {
+
+    const latitude = position.coords.latitude;
+    console.log(latitude);
+
+    const longitude = position.coords.longitude;
+    console.log(longitude);
+
+    
+
+    
+    const reponseContainer = document.createElement("div");
+    reponseContainer.classList.add("reponse-container");
+
+    const rep = document.createElement("div");
+    rep.classList.add("rep");
+
+    rep.innerText = `Votre position est : ${latitude} + ${longitude}`;
+   
+
+
+    reponseContainer.appendChild(rep);
 
     const screen = document.querySelector(".screen");
 
-    messageContainer.appendChild(sms)
-    screen.appendChild(messageContainer);
-  }
-  console.log("message envoyé")
-});
+    screen.appendChild(reponseContainer);
+    
 
-}
+  }
+
+  const onError = async function (error) {
+    console.log("erreur lors du chargement de la position");
+  }
+
+  //appel de la fonction
+  if ( navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    console.log("on a reçu la position"); 
+  } else {
+    console.log("on a pas reçu la position");
+  }
+  
+    
+  }
+
 /**
  * pour me docu sur le plugin de géolocalisation
  * https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/index.html
