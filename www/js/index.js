@@ -26,12 +26,24 @@ function onDeviceReady() {
 
   console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
   document.getElementById('deviceready').classList.add('ready');
-}
-/**
- * pour me docu sur le plugin de géolocalisation
- * https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/index.html
- */
 
+
+  navigator.geolocation.getCurrentPosition( onSuccess, onError );
+
+  
+const onSuccess = async function (position) {
+
+  const latitude = position.coords.latitude;
+
+  const longitude = position.coords.longitude;
+
+}
+
+
+
+const onError = async function (error){
+  console.log("erreur lors du chargement de la position");
+}
 
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", async function (event) {
@@ -56,3 +68,11 @@ btn.addEventListener("click", async function (event) {
   }
   console.log("message envoyé")
 });
+
+}
+/**
+ * pour me docu sur le plugin de géolocalisation
+ * https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/index.html
+ * 
+ */
+
