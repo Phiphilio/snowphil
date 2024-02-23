@@ -31,7 +31,24 @@ function onDeviceReady() {
  
 }
 
-  
+  // pour afficher le temps à côté des messages
+
+  function time (){
+    /**
+     * utilisation de la class data(), source : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
+     * la methode getHours(), source : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours
+     * les autres methodes s'utilisent de la même manière.
+     * .padStart(2, '0') : C'est une méthode de chaîne de caractères qui ajoute des caractères au début de la chaîne jusqu'à ce qu'elle atteigne la longueur spécifiée.
+     *  Dans ce cas, elle ajoute des zéros au début de la chaîne jusqu'à ce qu'elle ait une longueur de 2 caractères.
+     *  Cela garantit que l'heure est toujours représentée par deux chiffres, même si elle est inférieure à 10. Par exemple, si l'heure actuelle est 9 heures, cela renverra '09'. 
+     * Si l'heure est supérieure à 9, il ne fait rien.
+     */
+    const date = new Date();
+    const hour = date.getHours().toString().padstar(1,"0");
+    const minutes = date.getMinutes().toString().padStart(2,"0");
+    const second = date.getSeconds().toString().padStart(2,"0");
+    return `${hour}:${minutes}:${second}`;
+  }
 
   const btn = document.querySelector(".btn");
   btn.addEventListener("click", async function (event) {
